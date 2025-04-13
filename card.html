@@ -18,10 +18,15 @@
     <h1 class="title">Explore the Future</h1>
 
     <div class="scroll-container">
-        <div class="card">
+        <!--<div class="card">
             <h2>Live Data</h2>
             <p>Get real-time insights with cutting-edge AI technology.</p>
+        </div>-->
+        <div class="card">
+            <h2>Live Data</h2>
+            <p id="live-value">Fetching...</p>
         </div>
+          
         <div class="card">
             <h2>Trend Analysis</h2>
             <p>Experience ultra-fast and interactive data visualization.</p>
@@ -36,7 +41,7 @@
         </div>
     </div>
 
-    <script>
+    <!--<script>
         // Optional: You can add dark/light mode toggle functionality here
         const toggle = document.getElementById("theme-toggle");
         const modeText = document.getElementById("mode-text");
@@ -45,7 +50,33 @@
             document.body.classList.toggle("dark-mode");
             modeText.textContent = toggle.checked ? "Light Mode" : "Dark Mode";
         });
+    </script>-->
+    <script>
+        const toggle = document.getElementById("theme-toggle");
+        const modeText = document.getElementById("mode-text");
+    
+        toggle.addEventListener("change", () => {
+            document.body.classList.toggle("dark-mode");
+            modeText.textContent = toggle.checked ? "Light Mode" : "Dark Mode";
+        });
+    
+        // === Fetch Live Calcium Concentration Data ===
+        async function fetchCalciumData() {
+            try {
+                const response = await fetch("http://192.168.26.150/data"); // ESP32's IP
+                const data = await response.json();
+                document.getElementById("live-data").textContent = 
+                    `Calcium: ${data.calciumConcentration} mg/dL`;
+            } catch (error) {
+                console.error("Failed to fetch data:", error);
+                document.getElementById("live-data").textContent = "Error fetching data.";
+            }
+        }
+    
+        setInterval(fetchCalciumData, 2000); // Fetch every 2 seconds
     </script>
+    
+        
 </body>
 </html>
 
