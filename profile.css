@@ -1,0 +1,103 @@
+/* 🌌 Futuristic Dark Mode */
+body {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 🎭 Glassmorphic Profile Card */
+.profile-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 🖼️ Profile Image */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid cyan;
+    box-shadow: 0 0 15px cyan;
+    margin-bottom: 15px;
+}
+
+/* ✨ Profile Name & Email */
+.profile-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px cyan;
+}
+
+.profile-email {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+/* 🔘 Stylish Buttons */
+.profile-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(255, 0, 100, 0.7);
+    margin-top: 15px;
+}
+
+.profile-btn:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    box-shadow: 0px 0px 15px rgba(255, 0, 100, 1);
+}
+
+/* 🌓 Logout Button */
+.logout-btn {
+    display: block;
+    margin-top: 10px;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.7);
+}
+
+.logout-btn:hover {
+    background: linear-gradient(45deg, #2c5364, #203a43, #0f2027);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 1);
+}
+
+/* 🌠 Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

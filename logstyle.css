@@ -1,0 +1,134 @@
+/* 🔥 Dark Mode Futuristic Theme */
+body.dark-mode {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* 🌟 Glass Effect for Login Box */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.glass-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;/* Keep it fixed */
+        max-width: 90%; /* Ensure responsiveness */
+        padding: 40px 30px; /* Add padding inside */
+        box-sizing: border-box; /* Prevent overflow */
+    
+    
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 🌌 Glowing Logo */
+.logo {
+    width: 80px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0px 0px 10px cyan);
+}
+
+/* ✨ Input Fields */
+.input-container {
+    position: relative;
+    margin: 15px 0;
+}
+.input-container input {
+    width: calc(100% - 30px); /* Keep inputs inside the box */
+    max-width: 280px; /* Prevent inputs from exceeding box */
+    box-sizing: border-box; /* Ensures padding doesn’t break width */
+    padding-left: 40px; /* Space for icons */
+
+
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.input-container input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 💡 Input Icons */
+.icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 🎇 Hover Glow Effect */
+.input-container input:focus {
+    box-shadow: 0px 0px 15px cyan;
+}
+
+/* 🔘 Stunning Button */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 0px 10px rgba(255, 0, 100, 0.7);
+}
+
+.btn-login:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    box-shadow: 0px 0px 15px rgba(255, 0, 100, 1);
+}
+
+/* 🌓 Register Link */
+.register-link {
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.register-link a:hover {
+    text-shadow: 0px 0px 10px yellow;
+}
+
+/* 🌠 Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

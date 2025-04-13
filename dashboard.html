@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | UriSense</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body class="dark-mode">
+  <nav class="navbar">
+    <h1 class="logo">UriSense</h1>
+    <button id="profile-btn">Profile</button>
+    <button id="logout-btn">Logout</button>
+  </nav>
+
+  <section class="dashboard-content">
+    <h2>Welcome to your Dashboard</h2>
+    <div id="profile-data" style="display: none;">
+      <p><strong>Name:</strong> <span id="user-name"></span></p>
+      <p><strong>Email:</strong> <span id="user-email"></span></p>
+      <p><strong>Age:</strong> <span id="user-age"></span></p>
+      <p><strong>Occupation:</strong> <span id="user-occupation"></span></p>
+    </div>
+  </section>
+
+  <script>
+    const backendUrl = 'http://localhost:5000';
+
+    async function initDashboard() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tokenFromURL = urlParams.get('token');
+
+      if (tokenFromURL) {
+        localStorage.setItem('token', tokenFromURL);
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+
+      const token = localStorage.getItem('token');
+      if (!token) {
+        window.location.href = "login.html";
+        return;
+      }
+
+      try {
+        const res = await fetch(`${backendUrl}/api/auth/profile`, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        });
+
+        if (!res.ok) {
+          throw new Error('Unauthorized');
+        }
+
+        const user = await res.json();
+        localStorage.setItem('user', JSON.stringify(user));
+      } catch (err) {
+        console.error("🔴 Profile fetch failed:", err);
+        localStorage.clear();
+        window.location.href = "login.html";
+        return;
+      }
+
+      setupButtons(); // ✅ Setup UI only after everything else
+    }
+
+    function setupButtons() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      const profileBtn = document.getElementById("profile-btn");
+      const logoutBtn = document.getElementById("logout-btn");
+      const profileSection = document.getElementById("profile-data");
+
+      profileBtn.addEventListener("click", () => {
+        document.getElementById("user-name").textContent = user.name;
+        document.getElementById("user-email").textContent = user.email;
+        document.getElementById("user-age").textContent = user.age;
+        document.getElementById("user-occupation").textContent = user.occupation;
+        profileSection.style.display = "block";
+      });
+
+      logoutBtn.addEventListener("click", () => {
+        localStorage.clear();
+        window.location.href = "index.html";
+      });
+    }
+
+    // 🚀 Run the dashboard setup
+    initDashboard();
+  </script>
+</body>
+</html>

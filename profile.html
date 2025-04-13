@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Profile | UriSense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="prof.css">
+</head>
+<body class="dark-mode">
+
+  <div class="profile-container">
+    <div class="glass-box">
+      <img src="logo.jpeg" alt="Logo" class="logo" />
+      <h2>Your Profile</h2>
+
+      <p><strong>Name:</strong> <span id="user-name">Loading...</span></p>
+      <p><strong>Email:</strong> <span id="user-email">Loading...</span></p>
+      <p><strong>Age:</strong> <span id="user-age">Loading...</span></p>
+      <p><strong>Occupation:</strong> <span id="user-occupation">Loading...</span></p>
+
+      <button id="logout-btn">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    // ✅ Check for user token and load user data
+    const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (!token || !user) {
+      // If no login info, redirect to login
+      window.location.href = "login.html";
+    } else {
+      // Populate profile fields
+      document.getElementById('user-name').textContent = user.name || "N/A";
+      document.getElementById('user-email').textContent = user.email || "N/A";
+      document.getElementById('user-age').textContent = user.age || "N/A";
+      document.getElementById('user-occupation').textContent = user.occupation || "N/A";
+    }
+
+    // ✅ Logout logic
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>

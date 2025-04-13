@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | UriSense</title>
+  <link rel="stylesheet" href="Registyle.css" />
+</head>
+<body class="dark-mode">
+  <div class="register-container">
+    <div class="glass-box">
+      <img src="Logo.png" alt="Logo" class="logo" />
+      <h2>Create an Account</h2>
+      <p>Join us and experience the future</p>
+
+      <div class="input-container">
+        <input type="text" id="register-name" placeholder="Full Name" required />
+        <span class="icon">👤</span>
+      </div>
+
+      <div class="input-container">
+        <input type="number" id="register-age" placeholder="Age" min="1" required />
+      </div>
+
+      <div class="input-container">
+        <input type="text" id="register-occupation" placeholder="Occupation" required />
+      </div>
+
+      <div class="input-container">
+        <input type="email" id="register-email" placeholder="Email" required />
+      </div>
+
+      <div class="input-container">
+        <input type="password" id="register-password" placeholder="Password" required />
+      </div>
+
+      <div class="input-container">
+        <input type="password" id="register-confirm-password" placeholder="Confirm Password" required />
+      </div>
+
+      <button type="button" class="btn-register" id="register-button">Register</button>
+
+      <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+      <p id="register-error" style="color: red; margin-top: 10px;"></p>
+    </div>
+  </div>
+
+  <!-- ✅ Inline script at the bottom -->
+  <script>
+    document.getElementById("register-button").addEventListener("click", async function () {
+      const name = document.getElementById("register-name").value;
+      const age = document.getElementById("register-age").value;
+      const occupation = document.getElementById("register-occupation").value;
+      const email = document.getElementById("register-email").value;
+      const password = document.getElementById("register-password").value;
+      const confirmPassword = document.getElementById("register-confirm-password").value;
+      const errorElement = document.getElementById("register-error");
+
+      if (password !== confirmPassword) {
+        errorElement.textContent = " Passwords do not match!";
+        return;
+      }
+
+      try {
+        const res = await fetch("http://localhost:5000/api/auth/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, age, occupation, email, password }),
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          alert("✅ Registration successful! Please check your email to verify.");
+          window.location.href = "dashboard.html";
+        } else {
+          errorElement.textContent = " " + (result.message || "Registration failed.");
+        }
+      } catch (err) {
+        console.error(" Registration error:", err);
+        errorElement.textContent = " Server error. Try again later.";
+      }
+    });
+  </script>
+</body>
+</html>

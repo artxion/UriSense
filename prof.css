@@ -1,0 +1,76 @@
+body.dark-mode {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(120deg, #0f0f0f, #1a1a1a);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .glass-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    color: #00ffcc;
+  }
+  
+  .tagline {
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .info p {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #e0e0e0;
+    text-align: left;
+  }
+  
+  .btn-logout {
+    margin-top: 30px;
+    padding: 10px 25px;
+    background-color: #ff3c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-logout:hover {
+    background-color: #e62e2e;
+  }
+  
