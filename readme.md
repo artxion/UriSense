@@ -1,4 +1,4 @@
-# 🩺 UriSense 
+#                  🩺 **UriSense**
 UriSense is a compact, IoT-enabled device designed to measure urinary calcium concentration using a turbidity-based optical method. It enables early detection of calcium-related diseases and offers a non-invasive, accessible way to monitor this critical health parameter — from the comfort of home or clinical settings.
 
 ## ✨ Features 
@@ -45,3 +45,7 @@ Flask / Node.js
 MongoDB / Firebase Web Dashboard 
 #### Frontend: React.js Visualization: 
 AnyChart / Chart.js
+
+## 📸 Project Image
+
+![UriSense Device Image](174444346152.jpg)
