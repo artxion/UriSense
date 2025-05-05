@@ -1,79 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>UriSense</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #333366;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        img.project-image {
-            display: block;
-            margin: 20px auto;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-    </style>
-</head>
-<body>
+🩺 UriSense
+UriSense is a compact, IoT-enabled device designed to measure urinary calcium concentration using a turbidity-based optical method.
+It enables early detection of calcium-related diseases and offers a non-invasive, accessible way to monitor this critical health parameter — from the comfort of home or clinical settings.
 
-    <h1>UriSense</h1>
+✨ Features
+🔬 Turbidity-based Optical Sensing
+Custom-built sensor measures urinary calcium concentration by analyzing sample turbidity.
 
-    <img src="174444346152.jpg" alt="UriSense Device Image" class="project-image">
+🩻 Early Disease Detection
+Helps monitor and identify conditions like:
 
-    <p><strong>UriSense</strong> is a compact, IoT-enabled device designed to measure urinary calcium concentration using a turbidity-based optical method. By enabling early detection of calcium-related diseases, UriSense offers a non-invasive and accessible way to monitor a critical health parameter from the comfort of home or clinic settings.</p>
+Kidney stones
 
-    <section>
-        <h2>Features</h2>
-        <ul>
-            <li><strong>Turbidity-based Optical Sensing:</strong> Custom-built sensor measures urinary calcium concentration by analyzing sample turbidity.</li>
-            <li><strong>Early Disease Detection:</strong> Helps in monitoring and identifying conditions such as kidney stones, hypercalciuria, and other calcium-related disorders.</li>
-            <li><strong>Custom IoT Platform:</strong> Sensor data is securely stored on a custom-built IoT platform for real-time tracking, historical reference, and future analysis.</li>
-            <li><strong>User-friendly & Non-invasive:</strong> Compact design ensures ease of use and comfort without invasive procedures.</li>
-        </ul>
-    </section>
+Hypercalciuria
 
-    <section>
-        <h2>How It Works</h2>
-        <ul>
-            <li><strong>Sample Collection:</strong> A small urine sample is introduced into the sensor chamber.</li>
-            <li><strong>Turbidity Measurement:</strong> The sensor emits light through the sample and measures light scattering to estimate calcium concentration.</li>
-            <li><strong>Data Processing & Calibration:</strong> Sensor readings are processed and calibrated using pre-defined calibration curves to ensure accuracy.</li>
-            <li><strong>Data Transmission:</strong> The measured data is securely transmitted to the IoT platform via WiFi/Bluetooth.</li>
-            <li><strong>Analysis & Visualization:</strong> Users can access historical trends and receive alerts or reports through a web/mobile dashboard.</li>
-        </ul>
-    </section>
+Other calcium-related disorders
 
-    <section>
-        <h2>Tech Stack</h2>
-        <h3>Hardware</h3>
-        <ul>
-            <li>Custom-built optical turbidity sensor</li>
-            <li>Microcontroller (ESP32/Arduino)</li>
-        </ul>
+🌐 Custom IoT Platform
+Sensor data is securely stored on a custom-built IoT platform for:
 
-        <h3>Software</h3>
-        <ul>
-            <li>Firmware (C/C++)</li>
-            <li>IoT Platform (Flask / Node.js backend, MongoDB / Firebase for storage)</li>
-            <li>Web Dashboard (React.js / AnyChart / Chart.js for visualization)</li>
-        </ul>
-    </section>
+Real-time tracking
 
-</body>
-</html>
+Historical reference
+
+Future analysis
+
+👌 User-friendly & Non-invasive
+Compact design ensures ease of use and comfort without invasive procedures.
+
+⚙️ How It Works
+🧪 Sample Collection: A small urine sample is introduced into the sensor chamber.
+💡 Turbidity Measurement: The sensor emits light through the sample and measures light scattering to estimate calcium concentration.
+🧮 Data Processing & Calibration: Sensor readings are processed and calibrated using predefined calibration curves to ensure accuracy.
+📡 Data Transmission: The measured data is securely transmitted to the IoT platform via WiFi/Bluetooth.
+📊 Analysis & Visualization: Users access historical trends and receive alerts/reports via a web/mobile dashboard.
+
+🛠️ Tech Stack
+🔌 Hardware
+Custom-built optical turbidity sensor
+Microcontroller: ESP32 / Arduino
+
+💻 Software
+Firmware: C / C++
+IoT Platform
+Backend: Flask / Node.js
+Database: MongoDB / Firebase
+Web Dashboard
+Frontend: React.js
+Visualization: AnyChart / Chart.js
