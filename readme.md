@@ -48,4 +48,4 @@ AnyChart / Chart.js
 
 ## 📸 Project Image
 
-![UriSense Device Image](174444346152.jpg)
+![UriSense Device Image](https://github.com/artxion/UriSense/blob/main/1744444346152.jpg)
